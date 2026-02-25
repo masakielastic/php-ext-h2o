@@ -1,8 +1,0 @@
-#! /bin/sh
-#
-# Created by configure
-
-'./configure' \
-'--enable-h2o' \
-'--with-h2o-dir=/home/masakielastic/.local' \
-"$@"
