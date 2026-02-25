@@ -1,0 +1,6 @@
+// Windows build is not implemented yet.
+ARG_ENABLE("h2o", "whether to enable h2o extension", "no");
+
+if (PHP_H2O != "no") {
+  WARNING("h2o extension for Windows is not supported in this initial version.");
+}

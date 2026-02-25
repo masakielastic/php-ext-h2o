@@ -1,0 +1,12 @@
+-include h2o.dep
+h2o.lo: /home/masakielastic/php-ext-h2o/ext/h2o.c
+	$(LIBTOOL) --tag=CC --mode=compile $(CC) -I. -I/home/masakielastic/php-ext-h2o/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)   -DZEND_COMPILE_DL_EXT=1 -c /home/masakielastic/php-ext-h2o/ext/h2o.c -o h2o.lo  -MMD -MF h2o.dep -MT h2o.lo
+-include h2o_server.dep
+h2o_server.lo: /home/masakielastic/php-ext-h2o/ext/h2o_server.c
+	$(LIBTOOL) --tag=CC --mode=compile $(CC) -I. -I/home/masakielastic/php-ext-h2o/ext $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS)   -DZEND_COMPILE_DL_EXT=1 -c /home/masakielastic/php-ext-h2o/ext/h2o_server.c -o h2o_server.lo  -MMD -MF h2o_server.dep -MT h2o_server.lo
+$(phplibdir)/h2o.la: ./h2o.la
+	$(LIBTOOL) --tag=CC --mode=install cp ./h2o.la $(phplibdir)
+
+./h2o.la: $(shared_objects_h2o) $(H2O_SHARED_DEPENDENCIES)
+	$(LIBTOOL) --tag=CC --mode=link $(CC) -shared $(COMMON_FLAGS) $(CFLAGS_CLEAN) $(EXTRA_CFLAGS) $(LDFLAGS)  -o $@ -export-dynamic -avoid-version -prefer-pic -module -rpath $(phplibdir) $(EXTRA_LDFLAGS) $(shared_objects_h2o) $(H2O_SHARED_LIBADD)
+

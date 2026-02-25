@@ -1,0 +1,44 @@
+{
+  "name": "masakielastic/h2o",
+  "description": "Minimal HTTP server PHP extension powered by h2o",
+  "type": "php-ext",
+  "license": "proprietary",
+  "require": {
+    "php": ">=8.1"
+  },
+  "keywords": [
+    "php-ext",
+    "h2o",
+    "http",
+    "http2",
+    "server"
+  ],
+  "php-ext": {
+    "extension-name": "h2o",
+    "build-path": "ext",
+    "support-zts": false,
+    "support-nts": true,
+    "configure-options": [
+      {
+        "name": "with-h2o-dir",
+        "description": "Path to h2o installation prefix",
+        "needs-value": true
+      },
+      {
+        "name": "with-libuv-dir",
+        "description": "Path to libuv installation prefix",
+        "needs-value": true
+      },
+      {
+        "name": "with-openssl-dir",
+        "description": "Path to OpenSSL installation prefix",
+        "needs-value": true
+      },
+      {
+        "name": "enable-h2o-debug",
+        "description": "Enable debug logging for h2o extension",
+        "needs-value": false
+      }
+    ]
+  }
+}
