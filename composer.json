@@ -1,6 +1,7 @@
 {
   "name": "masakielastic/h2o",
   "description": "Minimal HTTP server PHP extension powered by h2o",
+  "version": "0.1.0",
   "type": "php-ext",
   "license": "proprietary",
   "require": {
