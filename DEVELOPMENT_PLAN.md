@@ -7,7 +7,7 @@
 
 ## 2. スコープ（最小実装）
 - PHP 関数:
-  - `h2o_server_run(array $options = []): void`
+  - `h2o_server_run(array $options = []): bool`
 - 実装する機能:
   - TCP listen（デフォルト `0.0.0.0:8080`）
   - HTTP リクエスト受信（method/path/headers/body-size を取得）
