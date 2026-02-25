@@ -34,6 +34,37 @@ php -n -d extension=$(pwd)/ext/modules/h2o.so -r 'var_dump(function_exists("h2o_
 h2o_server_run(array $options = null): bool
 ```
 
+## Example
+Create `sample.php`:
+
+```php
+<?php
+declare(strict_types=1);
+
+$ok = h2o_server_run([
+    'host' => '127.0.0.1',
+    'port' => 8080,
+    'response_body' => "Hello from h2o extension!\n",
+]);
+
+if ($ok !== true) {
+    fwrite(STDERR, "Failed to start h2o server\n");
+    exit(1);
+}
+```
+
+Run the server:
+
+```bash
+php -d extension=h2o sample.php
+```
+
+Test from another terminal:
+
+```bash
+curl http://127.0.0.1:8080/
+```
+
 Supported options:
 - `host` (string, default `0.0.0.0`)
 - `port` (int, default `8080`)
