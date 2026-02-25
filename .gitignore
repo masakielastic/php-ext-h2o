@@ -31,3 +31,6 @@ ext/*.o
 
 # Editor/system files
 .DS_Store
+
+# Local reference source
+sample.c
