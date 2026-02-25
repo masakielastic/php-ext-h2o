@@ -48,7 +48,7 @@ Notes:
 
 ## PIE
 ```bash
-pie install
+pie install masakielastic/h2o
 ```
 
 `composer.json` is configured as `type: php-ext` with `php-ext.build-path: ext`.
